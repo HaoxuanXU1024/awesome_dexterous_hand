@@ -8,14 +8,11 @@ An arXiv-first reading list for three tightly scoped directions:
 
 The five subsections under every direction intentionally follow the same order: **CVPR 2026**, **ICML 2026**, **ECCV 2026**, **Recent arXiv**, and **Former / foundational**. Each entry gives the full paper title, a one-sentence insight, and one direct PDF link.
 
-> Last audited: **2026-08-05**. The list was batch-crawled from arXiv and official conference indexes, then checked against the 78 PDFs in the local `ACE` attachment folder. Duplicate PDF variants are collapsed into one canonical entry.
-
 ## Contents
 
 - [Dexterous-hand RL](#1-dexterous-hand-rl)
 - [Unified latent/action spaces](#2-unified-latentaction-spaces)
 - [Dexterous hand + tactile sensing](#3-dexterous-hand--tactile-sensing)
-- [Curation notes](#curation-notes)
 
 ## 1. Dexterous-hand RL
 
@@ -27,7 +24,7 @@ The five subsections under every direction intentionally follow the same order: 
 
 ### ICML 2026
 
-ICML 2026 has no paper explicitly centered on multi-finger dexterous-hand RL in the official program; the entries below are the closest policy-learning methods and are marked **adjacent**.
+Adjacent policy-learning methods are included for context and marked **adjacent**.
 
 - FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation ([PDF](https://arxiv.org/pdf/2606.20867)) - Conditions VLA adaptation on future task context to improve sample efficiency during policy refinement.
 - VLA-Arena: An Open-Source Framework for Benchmarking Vision-Language-Action Models ([PDF](https://arxiv.org/pdf/2512.22539)) - Provides a reproducible evaluation harness for comparing VLA policies across tasks and embodiments.
@@ -35,7 +32,7 @@ ICML 2026 has no paper explicitly centered on multi-finger dexterous-hand RL in 
 
 ### ECCV 2026
 
-- No dexterous-hand papers were indexed in the official ECCV 2026 proceedings on 2026-08-05; this section will be backfilled when the proceedings are released.
+- No dexterous-hand papers listed yet.
 
 ### Recent arXiv (2025-2026)
 
@@ -75,7 +72,7 @@ ICML 2026 has no paper explicitly centered on multi-finger dexterous-hand RL in 
 
 ### ICML 2026
 
-The official ICML program contains no hand-specific unified-latent paper; these adjacent papers are useful for designing latent predictive/action interfaces.
+Adjacent methods for latent predictive and action interfaces are included for context.
 
 - Structured 4D Latent Predictive Model for Robot Planning ([PDF](https://arxiv.org/pdf/2607.01166)) - Predicts structured 4D latent states that support long-horizon robot planning.
 - World Guidance: World Modeling in Condition Space for Action Generation ([PDF](https://arxiv.org/pdf/2602.22010)) - Models action-conditioned future structure in a compact condition space and uses it to guide generation.
@@ -83,7 +80,7 @@ The official ICML program contains no hand-specific unified-latent paper; these 
 
 ### ECCV 2026
 
-- No unified-latent/action-space papers were indexed in the official ECCV 2026 proceedings on 2026-08-05; this section will be backfilled when the proceedings are released.
+- No unified-latent/action-space papers listed yet.
 
 ### Recent arXiv (2025-2026)
 
@@ -132,11 +129,11 @@ The official ICML program contains no hand-specific unified-latent paper; these 
 
 ### ICML 2026
 
-- No direct dexterous-hand+tactile paper was indexed in the official ICML 2026 program on 2026-08-05.
+- No direct dexterous-hand+tactile paper listed yet.
 
 ### ECCV 2026
 
-- No dexterous-hand+tactile papers were indexed in the official ECCV 2026 proceedings on 2026-08-05; this section will be backfilled when the proceedings are released.
+- No dexterous-hand+tactile papers listed yet.
 
 ### Recent arXiv (2025-2026)
 
@@ -175,24 +172,3 @@ The official ICML program contains no hand-specific unified-latent paper; these 
 - DexTouch: Learning to Seek and Manipulate Objects with Tactile Dexterity ([PDF](https://arxiv.org/pdf/2401.12496)) - Frames tactile exploration and manipulation as one closed-loop dexterous policy.
 - Bi-Touch: Bimanual Tactile Manipulation with Sim-to-Real Deep Reinforcement Learning ([PDF](https://arxiv.org/pdf/2307.06423)) - Demonstrates that tactile feedback can make bimanual sim-to-real dexterous control robust.
 - All the Feels: A Dexterous Hand with Large-Area Tactile Sensing ([PDF](https://arxiv.org/pdf/2210.15658)) - Introduces full-hand tactile coverage that exposes contact patterns beyond fingertips.
-
-## Curation notes
-
-- **Primary placement:** each paper is placed once under the theme that best matches its main contribution; cross-theme papers are linked again only when the second contribution is central (for example, tactile latent alignment).
-- **Recent arXiv:** includes 2025-2026 preprints discovered by batch searches over `"dexterous hand"`, `tactile dexterous manipulation`, and `cross-embodiment dexterous`, plus the arXiv identifiers extracted from local PDFs.
-- **Conference verification:** CVPR entries use official CVF PDFs, ICML entries use arXiv PDFs, and ECCV sections are marked unavailable because the proceedings index was empty on 2026-08-05.
-- **Local attachment coverage:** 78 PDFs under the ACE folder were inspected with title/abstract/arXiv-ID extraction. Duplicate variants (for example, the same paper stored under both a short numeric filename and a descriptive filename) are merged; unrelated foundation-model or hardware-only PDFs are not forced into the three-topic list.
-- **Missing arXiv records:** when an official conference PDF exists without a matching arXiv record, the entry links directly to that PDF.
-
-### Batch crawler
-
-The reproducible crawler used for arXiv discovery is [`scripts/crawl_arxiv.py`](scripts/crawl_arxiv.py). Example:
-
-```bash
-python3 scripts/crawl_arxiv.py \
-  --query '"dexterous hand"' \
-  --query 'tactile dexterous manipulation' \
-  --query 'cross-embodiment dexterous' \
-  --size 200 \
-  --output /tmp/ace_arxiv_results.json
-```
