@@ -28,4 +28,4 @@ Conference verification pages:
 
 ## Link checks
 
-All 94 arXiv links currently present in `README.md` returned HTTP 200 during the final link check. Conference links are intentionally kept as official pages even when a separate arXiv preprint could not be located.
+All 85 arXiv PDF links currently present in `README.md` returned HTTP 200 during the final link check. Conference entries use direct PDF links, with official CVF PDFs for CVPR and arXiv PDFs for ICML.
